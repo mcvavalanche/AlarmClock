@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlarmClock.Core", "AlarmClock.Core\AlarmClock.Core.csproj", "{7EFA56CB-A420-44B9-9AA6-AF9431FF306E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlarmClock.Droid", "AlarmClock.Droid\AlarmClock.Droid.csproj", "{068BCD19-79C1-49E3-8167-215FC90260AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EFA56CB-A420-44B9-9AA6-AF9431FF306E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EFA56CB-A420-44B9-9AA6-AF9431FF306E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EFA56CB-A420-44B9-9AA6-AF9431FF306E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EFA56CB-A420-44B9-9AA6-AF9431FF306E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{068BCD19-79C1-49E3-8167-215FC90260AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{068BCD19-79C1-49E3-8167-215FC90260AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{068BCD19-79C1-49E3-8167-215FC90260AD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{068BCD19-79C1-49E3-8167-215FC90260AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{068BCD19-79C1-49E3-8167-215FC90260AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{068BCD19-79C1-49E3-8167-215FC90260AD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
