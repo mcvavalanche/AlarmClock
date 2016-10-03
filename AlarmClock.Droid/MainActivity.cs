@@ -22,10 +22,19 @@ namespace AlarmClock.Droid
 
             // Get our button from the layout resource,
             // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.MyButton);
+            var button = FindViewById<Button>(Resource.Id.MyButton);
 
-            button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+
+            button.Click += Button_Click;
         }
+
+        private void Button_Click(object sender, EventArgs e)
+        {
+            var picker = FindViewById<TimePicker>(Resource.Id.AlarmTimePicker);
+            var text = FindViewById<TextView>(Resource.Id.InfoTextView);
+            text.Text = $"hour:{picker.Hour} minute:{picker.Minute}";
+        }
+
     }
 }
 
