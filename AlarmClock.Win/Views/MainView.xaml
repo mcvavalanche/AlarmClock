@@ -13,9 +13,13 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Grid.Column="0" Grid.Row="0"  Orientation="Vertical" Padding="5">
-            <TimePicker HorizontalAlignment="Center"   />
-            <Button x:Name="button" Content="click me" HorizontalAlignment="Center" />
+            <TimePicker HorizontalAlignment="Center"  Time="{Binding Time, Mode=TwoWay}"   />
+            <Button x:Name="button" Content="click me" HorizontalAlignment="Center" Command="{Binding Click}"  >
+            </Button>
             <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="TextBlock"/>
+            <ListView>
+                
+            </ListView>
         </StackPanel>
     </Grid>
 </views:MvxWindowsPage>

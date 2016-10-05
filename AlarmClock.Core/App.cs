@@ -14,6 +14,9 @@ namespace AlarmClock.Core
     /*
      * https://msdn.microsoft.com/en-us/magazine/dn759442.aspx?f=255&MSPPError=-2147217396
      * https://mvvmcross.com/docs/a-windows-universal-app-platform-project
+     * http://blog.jerrynixon.com/2016/07/understanding-targetdevicefamily.html
+     * https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide?f=255&MSPPError=-2147217396     
+     * https://developer.microsoft.com/en-us/windows/design
      */
 
     public class App : MvxApplication
