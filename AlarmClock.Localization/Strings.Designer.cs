@@ -52,12 +52,21 @@ namespace AlarmClock.Localization {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Alarms.
+        /// </summary>
+        public static string MainViewModel_AlarmListHeader {
+            get {
+                return ResourceManager.GetString("MainViewModel.AlarmListHeader", resourceCulture);
             }
         }
     }

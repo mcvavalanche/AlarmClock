@@ -11,12 +11,21 @@ using MvvmCross.Platform.IoC;
 
 namespace AlarmClock.Core
 {
-    /*
-     * https://msdn.microsoft.com/en-us/magazine/dn759442.aspx?f=255&MSPPError=-2147217396
+    /*     
+     * MVX - A Windows Universal App Platform Project - Tip App Example
      * https://mvvmcross.com/docs/a-windows-universal-app-platform-project
+     * 
+     * Understanding TargetDeviceFamily
      * http://blog.jerrynixon.com/2016/07/understanding-targetdevicefamily.html
+     * 
+     * Intro to the Universal Windows Platform
      * https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide?f=255&MSPPError=-2147217396     
+     * 
+     * UWP Design & UI
      * https://developer.microsoft.com/en-us/windows/design
+     * 
+     * 8 traits of great Metro style apps     * 
+     * https://channel9.msdn.com/Events/BUILD/BUILD2011/BPS-1004
      */
 
     public class App : MvxApplication

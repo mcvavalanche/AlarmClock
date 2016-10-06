@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Localization;
+using MvvmCross.Platform.Converters;
 using MvvmCross.WindowsUWP.Platform;
 
 namespace AlarmClock.Win
@@ -19,5 +21,12 @@ namespace AlarmClock.Win
         {
             return new Core.App();
         }
+
+
+        //protected override void FillValueConverters(IMvxValueConverterRegistry registry)
+        //{
+        //    //base.FillValueConverters(registry);
+        //    registry.AddOrOverwrite("Language", new MvxLanguageConverter());
+        //}
     }
 }

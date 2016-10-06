@@ -8,6 +8,7 @@ namespace AlarmClock.Core.Model
 {
     public class Alarm
     {
+        public string Name { get; set; }
         public DateTime AlarmTime { get; set; }
         public bool Repeat { get; set; }
 
