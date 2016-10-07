@@ -18,7 +18,7 @@
         <StackPanel Grid.Column="0" Grid.Row="0"  Orientation="Vertical" Padding="5">
             <TimePicker HorizontalAlignment="Center"  Time="{Binding Time, Mode=TwoWay}"   />
             <Button x:Name="button" Content="click me" HorizontalAlignment="Center" Command="{Binding Click}"></Button>
-            <TextBlock x:Name="textBlock" Text="{Binding TextSource,Converter={StaticResource Lang},ConverterParameter=AlarmListHeader,FallbackValue=AlarmListHeader,Mode=OneTime}"></TextBlock>
+            <TextBlock x:Name="textBlock" Text="{Binding TextSource,Converter={StaticResource Lang},ConverterParameter=AlarmListHeader,FallbackValue=List,Mode=OneTime}"></TextBlock>
             <ListView x:Name="listView" Height="100" ItemsSource="{Binding Alarms}">
                 <ListView.ItemTemplate>
                     <DataTemplate>

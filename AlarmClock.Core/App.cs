@@ -44,7 +44,7 @@ namespace AlarmClock.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            Mvx.RegisterSingleton<IMvxTextProvider> (new ResxTextProvider(AlarmClock.Localization.Strings.ResourceManager));
+            Mvx.RegisterSingleton<IMvxTextProvider> (new ResxTextProvider(Localization.Strings.ResourceManager));
 
             RegisterAppStart(new AppStart());
         }

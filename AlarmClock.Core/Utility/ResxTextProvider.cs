@@ -35,6 +35,8 @@ namespace AlarmClock.Core.Utility
             {
                 resolvedKey = $"{namespaceKey}.{resolvedKey}";
             }
+            var xx= _resourceManager.GetString("test");
+            
 
             return _resourceManager.GetString(resolvedKey);
         }

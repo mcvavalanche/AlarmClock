@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlarmClock.Localization", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlarmClock.Logging", "AlarmClock.Logging\AlarmClock.Logging.csproj", "{4ECC1A51-C29A-46E0-AC36-DA87413A33DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlarmClock.Repositories", "AlarmClock.Repositories\AlarmClock.Repositories.csproj", "{E176BEE2-F109-43BC-88EB-2AE189F9DBC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -119,6 +121,22 @@ Global
 		{4ECC1A51-C29A-46E0-AC36-DA87413A33DB}.Release|x64.Build.0 = Release|Any CPU
 		{4ECC1A51-C29A-46E0-AC36-DA87413A33DB}.Release|x86.ActiveCfg = Release|Any CPU
 		{4ECC1A51-C29A-46E0-AC36-DA87413A33DB}.Release|x86.Build.0 = Release|Any CPU
+		{E176BEE2-F109-43BC-88EB-2AE189F9DBC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E176BEE2-F109-43BC-88EB-2AE189F9DBC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E176BEE2-F109-43BC-88EB-2AE189F9DBC2}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{E176BEE2-F109-43BC-88EB-2AE189F9DBC2}.Debug|ARM.Build.0 = Debug|Any CPU
+		{E176BEE2-F109-43BC-88EB-2AE189F9DBC2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E176BEE2-F109-43BC-88EB-2AE189F9DBC2}.Debug|x64.Build.0 = Debug|Any CPU
+		{E176BEE2-F109-43BC-88EB-2AE189F9DBC2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E176BEE2-F109-43BC-88EB-2AE189F9DBC2}.Debug|x86.Build.0 = Debug|Any CPU
+		{E176BEE2-F109-43BC-88EB-2AE189F9DBC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E176BEE2-F109-43BC-88EB-2AE189F9DBC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E176BEE2-F109-43BC-88EB-2AE189F9DBC2}.Release|ARM.ActiveCfg = Release|Any CPU
+		{E176BEE2-F109-43BC-88EB-2AE189F9DBC2}.Release|ARM.Build.0 = Release|Any CPU
+		{E176BEE2-F109-43BC-88EB-2AE189F9DBC2}.Release|x64.ActiveCfg = Release|Any CPU
+		{E176BEE2-F109-43BC-88EB-2AE189F9DBC2}.Release|x64.Build.0 = Release|Any CPU
+		{E176BEE2-F109-43BC-88EB-2AE189F9DBC2}.Release|x86.ActiveCfg = Release|Any CPU
+		{E176BEE2-F109-43BC-88EB-2AE189F9DBC2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
