@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:AlarmClock.Win"
-    RequestedTheme="Light">
+    xmlns:converters="using:AlarmClock.Win.Converters"
+    RequestedTheme="Dark">
 
 </Application>

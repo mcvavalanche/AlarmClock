@@ -3,68 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using AlarmClock.Core.ViewModel;
+using MvvmCross.Core.ViewModels;
 
 namespace AlarmClock.Core.Model
 {
-    public class Alarm
+    public class Alarm: MvxViewModel
     {
+        private bool _repeat;
+        public string Name { get; set; }
         public DateTime AlarmTime { get; set; }
-        public bool Repeat { get; set; }
 
-    }
-
-    public enum ReccurenceType
-    {
-        None,
-        Daily,
-        Weekly,
-        Monthly,
-        Yearly,
-        Custom
-    }
-
-    public class BaseReccurence
-    {
-        public BaseReccurence()
+        public bool Repeat
         {
-            Type=ReccurenceType.Custom;
-            Infinite = true;
-            StartDate= RoundUp(DateTime.Now);
+            get { return _repeat; }
+            set
+            {
+                _repeat = value;
+                //OnPropertyChanged();
+                RaisePropertyChanged(()=>Repeat);
+            }
         }
+        private MvxCommand _edit;
 
-        private DateTime RoundUp(DateTime date)
+        public ICommand EditAlarm => _edit ?? (_edit = new MvxCommand(Edit));
+
+        private void Edit()
         {
-            return date;
-        }
-
-        public DateTime StartDate { get; set; }
-        public DateTime? EndDate { get; set; }
-        public int? Repeats { get; set; }
-        public bool Infinite { get; set; }
-        public ReccurenceType Type { get; set; }
-    }
-
-    public interface IReccurence
-    {
-        DateTime StartDate { get; set; }
-        ReccurenceType Type { get; set; }
-        DateTime? EndDate { get; set; }
-        int? Repeats { get; set; }
-        bool Infinite { get; set; }
-        DateTime GetNextDate(DateTime date);
-    }
-
-    public class CustomReccurence:BaseReccurence, IReccurence
-    {
-        public int Milliseconds { get; set; }
-
-        public CustomReccurence(int ms)
-        {
-            Milliseconds = ms;
-        }
-        public DateTime GetNextDate(DateTime date)
-        {
-            throw new NotImplementedException();
+            ShowViewModel<AlarmDetailsViewModel>(new {Id = 1});
         }
     }
+
+
 }

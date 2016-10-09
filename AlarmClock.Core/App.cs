@@ -8,6 +8,7 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.Localization;
 using MvvmCross.Platform;
 using MvvmCross.Platform.IoC;
+using AlarmClock.Localization;
 
 namespace AlarmClock.Core
 {
@@ -35,7 +36,7 @@ namespace AlarmClock.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            Mvx.RegisterSingleton<IMvxTextProvider> (new ResxTextProvider(AlarmClock.Localization.Strings.ResourceManager));
+            Mvx.RegisterSingleton<IMvxTextProvider> (new ResxTextProvider(Resources.ResourceManager));
 
             RegisterAppStart(new AppStart());
         }

@@ -28,12 +28,12 @@ namespace AlarmClock.Core.Utility
 
             if (!string.IsNullOrEmpty(typeKey))
             {
-                resolvedKey = $"{typeKey}.{resolvedKey}";
+                resolvedKey = $"{typeKey}_{resolvedKey}";
             }
 
             if (!string.IsNullOrEmpty(namespaceKey))
             {
-                resolvedKey = $"{namespaceKey}.{resolvedKey}";
+                resolvedKey = $"{namespaceKey}_{resolvedKey}";
             }
 
             return _resourceManager.GetString(resolvedKey, CurrentLanguage);
