@@ -11,39 +11,15 @@
     xmlns:converters="using:AlarmClock.Win.Converters"
     mc:Ignorable="d">
 
-    <views:MvxWindowsPage.Resources>
-        <converters:TranslationConverter x:Key="TransConverter" />
-        <Style TargetType="TextBlock" x:Key="DetailField" >
-            <Setter Property="Foreground" Value="Aqua" />
-            <Setter Property="FontSize" Value="12" />
-        </Style>
-    </views:MvxWindowsPage.Resources>
-    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Column="0" Grid.Row="0"  Orientation="Vertical" Padding="5">
-            <TimePicker HorizontalAlignment="Center"  Time="{Binding Time, Mode=TwoWay}"   />
-            <Button x:Name="button" Content="Add 1h" HorizontalAlignment="Center" Command="{Binding Click}"></Button>
-            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="{Binding LocalizedTextSource, Converter={StaticResource TransConverter}, ConverterParameter=AlarmHeader}"/>
-            <toolkit:DataGrid ItemsSource="{Binding Alarms}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
-                <toolkit:DataGrid.Columns>
-                    <toolkit:DataGridTextColumn   Width="200" Header="Name" Binding="{Binding Name}" d:DataContext="{d:DesignInstance Type=model:Alarm}"/>
-                    <toolkit:DataGridTextColumn Width="200" Header="Time" Binding="{Binding AlarmTime}" d:DataContext="{d:DesignInstance Type=model:Alarm}"/>
-                </toolkit:DataGrid.Columns>
-                <toolkit:DataGrid.ItemDetailsTemplate>
-                    <DataTemplate>
-                        <StackPanel Margin="10,10,10,5" d:DataContext="{d:DesignInstance Type=model:Alarm}">
-                            <TextBlock Text="Details: " FontWeight="Bold" />
-                            <TextBlock Text="{Binding Name}" Style="{StaticResource DetailField}" />
-                            <TextBlock Text="{Binding AlarmTime}" Style="{StaticResource DetailField}" />
-                            <CheckBox IsChecked="{Binding Repeat, Mode=TwoWay}" >Repeat</CheckBox>
-                            <Button x:Name="EditAlarm" Content="Edit" HorizontalAlignment="Center" Command="{Binding EditAlarm}" ></Button>
-                        </StackPanel>
-                    </DataTemplate>
-                </toolkit:DataGrid.ItemDetailsTemplate>
-            </toolkit:DataGrid>
+        <StackPanel Grid.Column="0" Grid.Row="0"  Orientation="Horizontal" Padding="5">
+            <TextBlock>menu1</TextBlock>
+            <TextBlock>menu2</TextBlock>
         </StackPanel>
+        <Frame Grid.Column="0" Grid.Row="1"></Frame>
     </Grid>
 </views:MvxWindowsPage>
