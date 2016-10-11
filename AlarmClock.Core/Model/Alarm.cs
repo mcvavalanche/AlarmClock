@@ -31,7 +31,7 @@ namespace AlarmClock.Core.Model
 
         private void Edit()
         {
-            ShowViewModel<AlarmDetailsViewModel>(new {Id = 1});
+            ShowViewModel<AlarmDetailsViewModel>(new {index = 1});
         }
     }
 

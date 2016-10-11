@@ -14,6 +14,12 @@ namespace AlarmClock.Core.ViewModel
         public AlarmDetailsViewModel()
         {
         }
+
+        public void Init(int index)
+        {
+            // use the index here
+        }
+
         private MvxCommand _saveCmd;
         public ICommand SaveCmd => _saveCmd ?? (_saveCmd = new MvxCommand(Save));
         private void Save()
