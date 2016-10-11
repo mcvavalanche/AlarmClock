@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using AlarmClock.Core.Sservices;
 using AlarmClock.Core.Utility;
 using Microsoft.VisualBasic;
 using MvvmCross.Core.ViewModels;
@@ -38,7 +39,7 @@ namespace AlarmClock.Core
 
             Mvx.RegisterSingleton<IMvxTextProvider> (new ResxTextProvider(Resources.ResourceManager));
 
-            RegisterAppStart(new AppStart());
+            RegisterAppStart(new AppStart(new LoginService()));
         }
     }
 }
