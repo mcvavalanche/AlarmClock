@@ -97,12 +97,14 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\TranslationConverter.cs" />
+    <Compile Include="MvxWindowsMultiRegionViewPresenter.cs" />
+    <Compile Include="RegionAttributeExtentionMethods.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Views\AlarmDetailsView.xaml.cs">
       <DependentUpon>AlarmDetailsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AlarmsOverview.xaml.cs">
-      <DependentUpon>AlarmsOverview.xaml</DependentUpon>
+    <Compile Include="Views\AlarmsView.xaml.cs">
+      <DependentUpon>AlarmsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
@@ -142,7 +144,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AlarmsOverview.xaml">
+    <Page Include="Views\AlarmsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

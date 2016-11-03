@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.WindowsUWP.Platform;
+using MvvmCross.WindowsUWP.Views;
 
 namespace AlarmClock.Win
 {
@@ -18,6 +19,16 @@ namespace AlarmClock.Win
         protected override IMvxApplication CreateApp()
         {
             return new Core.App();
+        }
+
+        protected override IMvxWindowsViewPresenter CreateViewPresenter(IMvxWindowsFrame rootFrame)
+        {
+
+            var customPresenter = new MvxWindowsMultiRegionViewPresenter(rootFrame);
+            return customPresenter;
+
+            //var x=base.CreateViewPresenter(rootFrame);
+            
         }
     }
 }

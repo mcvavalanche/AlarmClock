@@ -13,13 +13,43 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Column="0" Grid.Row="0"  Orientation="Horizontal" Padding="5">
-            <TextBlock>menu1</TextBlock>
-            <TextBlock>menu2</TextBlock>
-        </StackPanel>
-        <Frame Grid.Column="0" Grid.Row="1"></Frame>
+        
+        <SplitView x:Name="RootSplitView"
+            DisplayMode="CompactInline"
+            IsPaneOpen="false"
+            CompactPaneLength="48"
+            OpenPaneLength="200"
+            Grid.Column="0" 
+            Grid.Row="0">
+            <SplitView.Pane>
+                <StackPanel Background="Gray">
+                    <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                    Width="50" Height="50" Background="Transparent" Click="HamburgerButton_OnClick"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="MenuButton1" FontFamily="Segoe MDL2 Assets" Content="&#xE825;"
+                    Width="50" Height="50" Background="Transparent" Command="{Binding Button1Clicked}"/>
+                        <TextBlock Text="Button 1" FontSize="18" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="MenuButton2" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;"
+                        Width="50" Height="50" Background="Transparent"  Command="{Binding Button2Clicked}"/>
+                        <TextBlock Text="Button 2" FontSize="18" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="MenuButton3" FontFamily="Segoe MDL2 Assets" Content="&#xE1D6;"
+                        Width="50" Height="50" Background="Transparent"  Command="{Binding Button3Clicked}"/>
+                        <TextBlock Text="Button 3" FontSize="18" VerticalAlignment="Center" />
+                    </StackPanel>
+                </StackPanel>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <TextBlock>content here</TextBlock>
+            </SplitView.Content>
+        </SplitView>
+
     </Grid>
+
+
 </views:MvxWindowsPage>

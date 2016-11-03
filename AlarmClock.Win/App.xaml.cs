@@ -76,10 +76,11 @@ namespace AlarmClock.Win
                     // parameter
                     //rootFrame.Navigate(typeof(MainView), e.Arguments);
                     var setup = new Setup(rootFrame);
+                    
                     setup.Initialize();
 
-                    var start = Mvx.Resolve<IMvxAppStart>();
-                    start.Start();
+                    var appStart = Mvx.Resolve<IMvxAppStart>();
+                    appStart.Start();
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();

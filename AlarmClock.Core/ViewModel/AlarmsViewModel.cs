@@ -9,11 +9,11 @@ using MvvmCross.Core.ViewModels;
 
 namespace AlarmClock.Core.ViewModel
 {
-    public class AlarmsOverviewViewModel: BaseViewModel
+    public class AlarmsViewModel: BaseViewModel
     {
         private TimeSpan _time;
 
-        public AlarmsOverviewViewModel()
+        public AlarmsViewModel()
         {
             _time = DateTime.Now.TimeOfDay;
             Alarms = new List<Alarm>()
@@ -43,6 +43,7 @@ namespace AlarmClock.Core.ViewModel
         private void DoStuff()
         {
             Time = _time.Add(new TimeSpan(1, 0, 0));
+
         }
 
 

@@ -21,9 +21,10 @@ namespace AlarmClock.Win.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class AlarmsOverview : MvxWindowsPage
+    [Region("AlarmsView")]
+    public sealed partial class AlarmsView : MvxWindowsPage
     {
-        public AlarmsOverview()
+        public AlarmsView()
         {
             this.InitializeComponent();
         }
