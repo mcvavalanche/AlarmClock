@@ -12,6 +12,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using AlarmClock.Core;
+using AlarmClock.Win.Presenter;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.WindowsUWP.Views;
 
@@ -22,35 +24,37 @@ namespace AlarmClock.Win.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainView : MvxWindowsPage, IMvxMultiRegionHost
+    [Region("")]
+    public sealed partial class MainView : MvxWindowsPage, IDetailRegionHost
     {
+        private readonly MvxWrappedFrame _wrappedFrame;
         public MainView()
         {
             InitializeComponent();
+            _wrappedFrame = new MvxWrappedFrame(ContentFrame);
         }
 
 
-        public void Show(MvxWindowsPage view)
-        {
-            if (!view.HasRegionAttribute())
-                throw new InvalidOperationException(
-                    "View was expected to have a RegionAttribute, but none was specified.");
+        //public void Show(MvxWindowsPage view)
+        //{
+        //    if (!view.HasRegionAttribute())
+        //        throw new InvalidOperationException(
+        //            "View was expected to have a RegionAttribute, but none was specified.");
+        //    var regionName = view.GetRegionName();
+        //    RootSplitView.Content = view;
+        //}
 
-            var regionName = view.GetRegionName();
+        //public void CloseViewModel(IMvxViewModel viewModel)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
+        //public void CloseAll()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-            RootSplitView.Content = view;
-        }
-
-        public void CloseViewModel(IMvxViewModel viewModel)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void CloseAll()
-        {
-            throw new NotImplementedException();
-        }
+        public IMvxWindowsFrame DetailContent => _wrappedFrame;
 
         private void HamburgerButton_OnClick(object sender, RoutedEventArgs e)
         {

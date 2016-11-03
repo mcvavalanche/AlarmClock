@@ -97,8 +97,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\TranslationConverter.cs" />
-    <Compile Include="MvxWindowsMultiRegionViewPresenter.cs" />
-    <Compile Include="RegionAttributeExtentionMethods.cs" />
+    <Compile Include="Presenter\IDetailRegionHost.cs" />
+    <Compile Include="Presenter\RegionAttribute.cs" />
+    <Compile Include="Presenter\WindowsDetailRegionViewPresenter.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Views\AlarmDetailsView.xaml.cs">
       <DependentUpon>AlarmDetailsView.xaml</DependentUpon>
@@ -168,6 +169,7 @@
       <Name>Windows Mobile Extensions for the UWP</Name>
     </SDKReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
