@@ -97,9 +97,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\TranslationConverter.cs" />
-    <Compile Include="Presenter\IDetailRegionHost.cs" />
+    <Compile Include="Presenter\IRegionHost.cs" />
     <Compile Include="Presenter\RegionAttribute.cs" />
-    <Compile Include="Presenter\WindowsDetailRegionViewPresenter.cs" />
+    <Compile Include="Presenter\WindowsRegionViewPresenter.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Views\AlarmDetailsView.xaml.cs">
       <DependentUpon>AlarmDetailsView.xaml</DependentUpon>
@@ -114,6 +114,9 @@
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -156,6 +159,10 @@
     <Page Include="Views\MainView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

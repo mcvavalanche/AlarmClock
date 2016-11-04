@@ -45,7 +45,7 @@
                 </StackPanel>
             </SplitView.Pane>
             <SplitView.Content>
-                <Frame x:Name="ContentFrame"></Frame>
+                <Frame x:Name="DetailContentFrame"></Frame>
             </SplitView.Content>
         </SplitView>
 

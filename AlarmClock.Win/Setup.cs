@@ -25,7 +25,7 @@ namespace AlarmClock.Win
         protected override IMvxWindowsViewPresenter CreateViewPresenter(IMvxWindowsFrame rootFrame)
         {
 
-            var customPresenter = new WindowsDetailRegionViewPresenter(rootFrame);
+            var customPresenter = new WindowsRegionViewPresenter(rootFrame);
             return customPresenter;
 
             //var x=base.CreateViewPresenter(rootFrame);

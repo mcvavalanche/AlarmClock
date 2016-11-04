@@ -14,13 +14,13 @@ using MvvmCross.WindowsUWP.Views;
 namespace AlarmClock.Win.Presenter
 {
     /// <summary>
-    /// Inspired from: http://stackoverflow.com/questions/33131034/how-to-implement-a-custom-presenter-in-a-windows-uwp-xamarin-mvvmcross
+    /// Inspired by: http://stackoverflow.com/questions/33131034/how-to-implement-a-custom-presenter-in-a-windows-uwp-xamarin-mvvmcross
     /// </summary>
-    class WindowsDetailRegionViewPresenter : MvxWindowsViewPresenter
+    class WindowsRegionViewPresenter : MvxWindowsViewPresenter
     {
         private readonly IMvxWindowsFrame _rootFrame;
 
-        public WindowsDetailRegionViewPresenter(IMvxWindowsFrame rootFrame)
+        public WindowsRegionViewPresenter(IMvxWindowsFrame rootFrame)
             : base(rootFrame)
         {
             _rootFrame = rootFrame;
@@ -28,36 +28,39 @@ namespace AlarmClock.Win.Presenter
 
         public override async void Show(MvxViewModelRequest request)
         {
-            if (Host != null)
+            if (RootHost != null)
             {
                 var viewFinder = Mvx.Resolve<IMvxViewsContainer>();
                 var viewType = viewFinder.GetViewType(request.ViewModelType);
                 var regionAttribute = GetRegionAttribute(viewType);
                 if (regionAttribute != null)
                 {
-                    var host = FindHost(regionAttribute.ParentName);
+                    var hostContentFrame = FindHostContentFrame(regionAttribute.ParentType);
                     var converter = Mvx.Resolve<IMvxNavigationSerializer>();
                     var requestText = converter.Serializer.SerializeObject(request);
-                    host.DetailContent.Navigate(viewType, requestText);
+                    hostContentFrame.Navigate(viewType, requestText);
                     return;
                 }
             }
             base.Show(request);
         }
 
-        private IDetailRegionHost Host => _rootFrame.Content as IDetailRegionHost;
+        private IRegionHost RootHost => _rootFrame.Content as IRegionHost;
 
-        private IDetailRegionHost FindHost(string name)
+        private IMvxWindowsFrame FindHostContentFrame(Type type)
         {
-            return FindHost(name, Host);
+            if (type==null)
+            {
+                return _rootFrame;
+            }
+            return FindHostContentFrame(type, RootHost);
         }
-        private IDetailRegionHost FindHost(string name, IDetailRegionHost host)
+        private IMvxWindowsFrame FindHostContentFrame(Type type, IRegionHost host)
         {
             if (host != null)
             {
-                var ha = GetRegionAttribute(host.GetType());
-                if (ha.Name == name) return host;
-                else return FindHost(name, host.DetailContent.Content as IDetailRegionHost);
+                if (host.GetType() == type) return host.ContentFrame;
+                else return FindHostContentFrame(type, host.ContentFrame.Content as IRegionHost);
             }
             return null;
         }
@@ -74,11 +77,11 @@ namespace AlarmClock.Win.Presenter
             var viewType = viewFinder.GetViewType(viewModel.GetType());
             var regionAttribute = GetRegionAttribute(viewType);
 
-            var host = FindHost(regionAttribute.ParentName);
-            var currentView = host.DetailContent.Content as IMvxView;
-            if (currentView != null && currentView.ViewModel == viewModel && host.DetailContent.CanGoBack)
+            var hostContentFrame = FindHostContentFrame(regionAttribute.ParentType);
+            var currentView = hostContentFrame.Content as IMvxView;
+            if (currentView != null && currentView.ViewModel == viewModel && hostContentFrame.CanGoBack)
             {
-                host.DetailContent.GoBack();
+                hostContentFrame.GoBack();
             }
         }
     }

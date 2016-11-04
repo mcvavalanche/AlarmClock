@@ -12,34 +12,22 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using AlarmClock.Core;
 using AlarmClock.Win.Presenter;
-using MvvmCross.Core.ViewModels;
 using MvvmCross.WindowsUWP.Views;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace AlarmClock.Win.Views
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    [Region()]
-    public sealed partial class MainView : MvxWindowsPage, IRegionHost
+    [Region(typeof(MainView))]
+    public sealed partial class SettingsView : MvxWindowsPage
     {
-        private readonly MvxWrappedFrame _wrappedFrame;
-        public MainView()
+        public SettingsView()
         {
-            InitializeComponent();
-            _wrappedFrame = new MvxWrappedFrame(DetailContentFrame);
-        }
-
-        public IMvxWindowsFrame ContentFrame => _wrappedFrame;
-
-        private void HamburgerButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            RootSplitView.IsPaneOpen = !RootSplitView.IsPaneOpen;
+            this.InitializeComponent();
         }
     }
 }
-

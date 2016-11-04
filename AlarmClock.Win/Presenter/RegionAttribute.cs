@@ -6,13 +6,23 @@ namespace AlarmClock.Win.Presenter
     public sealed class RegionAttribute
        : Attribute
     {
-        public RegionAttribute(string name, string parentName="")
+        /// <summary>
+        /// ctor useful for specifing the name of root parents 
+        /// </summary>
+        public RegionAttribute()
         {
-            Name = name;
-            ParentName = parentName;
+            ParentType = null;
         }
 
-        public string Name { get; private set; }
-        public string ParentName { get; private set; }
+        /// <summary>
+        /// Useful for specifing the parent of leaf children
+        /// </summary>
+        /// <param name="parentType">Type of the parent view</param>
+        public RegionAttribute(Type parentType)
+        {
+            ParentType = parentType;
+        }
+        
+        public Type ParentType { get; private set; }
     }
 }

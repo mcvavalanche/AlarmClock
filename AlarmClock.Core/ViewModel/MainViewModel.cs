@@ -19,7 +19,7 @@ namespace AlarmClock.Core.ViewModel
 
         private void DoStuff()
         {
-            ShowViewModel<LoginViewModel>();
+            ShowViewModel<AlarmsViewModel>();
         }
 
 
@@ -29,7 +29,18 @@ namespace AlarmClock.Core.ViewModel
         private void DoStuff2()
         {
 
-            ShowViewModel<AlarmsViewModel>();
+            ShowViewModel<SettingsViewModel>();
         }
+
+
+        private MvxCommand _click3;
+        public ICommand Button3Clicked => _click3 ?? (_click3 = new MvxCommand(DoStuff3));
+
+        private void DoStuff3()
+        {
+
+            ShowViewModel<LoginViewModel>();
+        }
+
     }
 }

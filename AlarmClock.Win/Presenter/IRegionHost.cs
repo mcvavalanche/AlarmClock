@@ -2,8 +2,8 @@
 
 namespace AlarmClock.Win.Presenter
 {
-    public interface IDetailRegionHost
+    public interface IRegionHost
     {
-        IMvxWindowsFrame DetailContent { get; }
+        IMvxWindowsFrame ContentFrame { get; }
     }
 }
