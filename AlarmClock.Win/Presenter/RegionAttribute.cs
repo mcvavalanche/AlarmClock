@@ -11,18 +11,18 @@ namespace AlarmClock.Win.Presenter
         /// </summary>
         public RegionAttribute()
         {
-            ParentType = null;
+            HostType = null;
         }
 
         /// <summary>
         /// Useful for specifing the parent of leaf children
         /// </summary>
-        /// <param name="parentType">Type of the parent view</param>
-        public RegionAttribute(Type parentType)
+        /// <param name="hostType">Type of the parent view</param>
+        public RegionAttribute(Type hostType)
         {
-            ParentType = parentType;
+            HostType = hostType;
         }
         
-        public Type ParentType { get; private set; }
+        public Type HostType { get; private set; }
     }
 }

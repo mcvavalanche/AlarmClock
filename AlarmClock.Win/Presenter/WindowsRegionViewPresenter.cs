@@ -33,34 +33,29 @@ namespace AlarmClock.Win.Presenter
                 var viewFinder = Mvx.Resolve<IMvxViewsContainer>();
                 var viewType = viewFinder.GetViewType(request.ViewModelType);
                 var regionAttribute = GetRegionAttribute(viewType);
-                if (regionAttribute != null)
-                {
-                    var hostContentFrame = FindHostContentFrame(regionAttribute.ParentType);
-                    var converter = Mvx.Resolve<IMvxNavigationSerializer>();
-                    var requestText = converter.Serializer.SerializeObject(request);
-                    hostContentFrame.Navigate(viewType, requestText);
-                    return;
-                }
+                var hostContentFrame = FindHostContentFrame(regionAttribute?.HostType);
+                var converter = Mvx.Resolve<IMvxNavigationSerializer>();
+                var requestText = converter.Serializer.SerializeObject(request);
+                hostContentFrame?.Navigate(viewType, requestText);
             }
-            base.Show(request);
         }
 
         private IRegionHost RootHost => _rootFrame.Content as IRegionHost;
 
-        private IMvxWindowsFrame FindHostContentFrame(Type type)
+        private IMvxWindowsFrame FindHostContentFrame(Type hostType)
         {
-            if (type==null)
+            if (hostType == null)
             {
                 return _rootFrame;
             }
-            return FindHostContentFrame(type, RootHost);
+            return FindHostContentFrame(hostType, RootHost);
         }
-        private IMvxWindowsFrame FindHostContentFrame(Type type, IRegionHost host)
+        private IMvxWindowsFrame FindHostContentFrame(Type hostType, IRegionHost host)
         {
             if (host != null)
             {
-                if (host.GetType() == type) return host.ContentFrame;
-                else return FindHostContentFrame(type, host.ContentFrame.Content as IRegionHost);
+                if (host.GetType() == hostType) return host.ContentFrame;
+                else return FindHostContentFrame(hostType, host.ContentFrame.Content as IRegionHost);
             }
             return null;
         }
@@ -76,12 +71,11 @@ namespace AlarmClock.Win.Presenter
             var viewFinder = Mvx.Resolve<IMvxViewsContainer>();
             var viewType = viewFinder.GetViewType(viewModel.GetType());
             var regionAttribute = GetRegionAttribute(viewType);
-
-            var hostContentFrame = FindHostContentFrame(regionAttribute.ParentType);
-            var currentView = hostContentFrame.Content as IMvxView;
+            var hostContentFrame = FindHostContentFrame(regionAttribute?.HostType);
+            var currentView = hostContentFrame?.Content as IMvxView;
             if (currentView != null && currentView.ViewModel == viewModel && hostContentFrame.CanGoBack)
             {
-                hostContentFrame.GoBack();
+                hostContentFrame?.GoBack();
             }
         }
     }
